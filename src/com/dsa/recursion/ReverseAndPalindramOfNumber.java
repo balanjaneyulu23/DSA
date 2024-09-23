@@ -1,9 +1,13 @@
 package com.dsa.recursion;
 
-public class ReverseOfNumber {
+public class ReverseAndPalindramOfNumber {
     public static void main(String[] args) {
 
         System.out.println("Reverse of a number "+ reverseOfNumber(1234));
+    }
+
+    static boolean palindrum(int n){
+        return n==reverseOfNumber(n);
     }
 
     static int reverseOfNumber(int n) {
