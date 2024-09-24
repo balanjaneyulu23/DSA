@@ -20,6 +20,13 @@
              here return index value's  where same item are found i.e duplicate items<br />
              third problem is return whether item is found or not , boolean value <br />
          15. find out element in rotated array using recursion <br />
+         Pattern based questions using recursion <br />
+         16. printing triangle <br />
+         Sorting algorithms using recursion <br />
+         17. Bubble sort using recursion <br />
+         18. Bubble sort using recursion <br />
+
+     
 
 
          
