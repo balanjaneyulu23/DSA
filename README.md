@@ -24,7 +24,10 @@
          16. printing triangle <br />
          Sorting algorithms using recursion <br />
          17. Bubble sort using recursion <br />
-         18. Bubble sort using recursion <br />
+         18. selection sort using recursion  <br />
+         19. merge sort using recursion  <br />
+         20. quick sort using recursion  <br />
+         
 
      
 
