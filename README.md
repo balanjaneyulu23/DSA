@@ -27,6 +27,9 @@
          18. selection sort using recursion  <br />
          19. merge sort using recursion  <br />
          20. quick sort using recursion  <br />
+         String problems using recursion <br />
+         21. skip letter in string (i/p str=abacd,o/p=bcd here a is skipped)
+
          
 
      
