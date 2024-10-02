@@ -29,6 +29,9 @@
          20. quick sort using recursion  <br />
          String problems using recursion <br />
          21. skip letter in string (i/p str=abacd,o/p=bcd here a is skipped)
+         22. subset of a string using recursion<br />
+
+
 
          
 
