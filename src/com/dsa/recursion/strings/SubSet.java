@@ -6,9 +6,9 @@ import java.util.List;
 public class SubSet {
 
     public static void main(String[] args) {
-        //subSet("", "abc");
+        subSet("", "122");
         //System.out.println(getSubSet("", "abc"));
-        System.out.println(getSubsetAscii("", "abc"));
+        //System.out.println(getSubsetAscii("", "abc"));
     }
 
     /**
@@ -68,4 +68,5 @@ public class SubSet {
         left.addAll(right);
         return left;
     }
+
 }

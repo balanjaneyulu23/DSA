@@ -30,6 +30,7 @@
          String problems using recursion <br />
          21. skip letter in string (i/p str=abacd,o/p=bcd here a is skipped)
          22. subset of a string using recursion<br />
+         23. sub set of an given integer array using recursion leet code#78 refer class :SubSetOfArray->method :subSetReturn<br />
 
 
 
