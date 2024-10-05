@@ -31,6 +31,10 @@
          21. skip letter in string (i/p str=abacd,o/p=bcd here a is skipped)
          22. subset of a string using recursion<br />
          23. sub set of an given integer array using recursion leet code#78 refer class :SubSetOfArray->method :subSetReturn<br />
+         24. permutation of a given string abc. class name: Permutations->permutation()<br />
+         25. permutation of a given string abc, return results class name: Permutations->permutationList()<br />
+         26. permutation of a given string abc. return result count . class name: Permutations->permutationCount()<br />
+
 
 
 
