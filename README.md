@@ -36,6 +36,9 @@
          26. permutation of a given string abc. return result count . class name: Permutations->permutationCount()<br />
          27.Leet code No 17. Letter Combinations of a Phone Number class name :[LetterCombination.java]<br />
          28. Number of Dice Rolls with Target Sum using recursion class name : NumberOfDice <br />
+         29. No of ways to reach point A to point B in maze 3d array using recursion class name : Maze <br />
+         30. printing no of paths to reach  point A to point B in maze  using recursion class name : Maze <br />
+         31.printing no of paths to reach  point A to point B when obstacles are in maze  using recursion class name : Maze <br />
 
 
 
