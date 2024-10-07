@@ -35,6 +35,7 @@
          25. permutation of a given string abc, return results class name: Permutations->permutationList()<br />
          26. permutation of a given string abc. return result count . class name: Permutations->permutationCount()<br />
          27.Leet code No 17. Letter Combinations of a Phone Number class name :[LetterCombination.java]<br />
+         28. Number of Dice Rolls with Target Sum using recursion class name : NumberOfDice <br />
 
 
 
