@@ -39,6 +39,8 @@
          29. No of ways to reach point A to point B in maze 3d array using recursion class name : Maze <br />
          30. printing no of paths to reach  point A to point B in maze  using recursion class name : Maze <br />
          31.printing no of paths to reach  point A to point B when obstacles are in maze  using recursion class name : Maze <br />
+         32.printing all paths left right and up and down no of paths to reach  point A to point B when obstacles are in maze  using recursion class name : MazeAllPaths <br />
+         33.printing all mathrix paths using recursion class name : MatrixPathsMaze <br />
 
 
 
