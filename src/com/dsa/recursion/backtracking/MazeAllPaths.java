@@ -1,4 +1,4 @@
-package com.dsa.recursion;
+package com.dsa.recursion.backtracking;
 
 public class MazeAllPaths {
     public static void main(String[] args) {

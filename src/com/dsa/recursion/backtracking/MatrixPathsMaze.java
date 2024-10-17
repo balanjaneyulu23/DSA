@@ -1,4 +1,4 @@
-package com.dsa.recursion;
+package com.dsa.recursion.backtracking;
 
 import java.util.Arrays;
 
