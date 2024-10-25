@@ -43,6 +43,7 @@
          33.printing all mathrix paths using recursion-backtracking class name : MatrixPathsMaze <br />
          34.N queens problem using recursion-backtracking class name : NQueensProblem <br />
          35.Knights problem using recursion-backtracking class name : Knights <br />
+         36.Sukudo problem using recursion-backtracking leetcode37 class name : SudokuSolver <br />
          
 
 
