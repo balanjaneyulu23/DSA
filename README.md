@@ -42,6 +42,8 @@
          32.printing all paths left right and up and down no of paths to reach  point A to point B  using recursion-backtracking class name : MazeAllPaths <br />
          33.printing all mathrix paths using recursion-backtracking class name : MatrixPathsMaze <br />
          34.N queens problem using recursion-backtracking class name : NQueensProblem <br />
+         35.Knights problem using recursion-backtracking class name : Knights <br />
+         
 
 
          
