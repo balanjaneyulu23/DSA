@@ -45,6 +45,8 @@
          35.Knights problem using recursion-backtracking class name : Knights <br />
          36.Sukudo problem using recursion-backtracking leetcode37 class name : SudokuSolver <br />
 **StriversA2ZDSA** <br />
+Step1. Lec 2: Build-up Logical thinking: Pattern problems com.dsa.striversa2z.step1_2.Patterns<br />
+
 
          
 
