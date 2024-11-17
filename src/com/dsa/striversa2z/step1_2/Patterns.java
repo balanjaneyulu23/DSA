@@ -5,7 +5,7 @@ public class Patterns {
     public static void main(String[] args) {
         //pattern1(4, 4);
         //pattern2(5);
-        pattern21(4);
+        pattern22(4);
     }
 
     public static void pattern1(int row, int col) {
@@ -358,6 +358,24 @@ public class Patterns {
                 }
             }
             System.out.println();
+        }
+    }
+
+    public static void pattern22(int n){
+        // outer loop for no of rows
+        for (int i = 0; i < 2*n-1; i++) {
+            // inner loop for no of columns
+            for (int j = 0; j <2*n-1 ; j++) {
+                // initialize top , bottom, left and right
+                int right=(2*n-2)-j;
+                int bottom=(2*n-2)-i;
+
+                System.out.print(n-Math.min(Math.min(i,bottom),Math.min(j,right))+ " ");
+
+            }
+
+            System.out.println();
+
         }
 
     }
