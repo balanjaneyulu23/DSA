@@ -46,6 +46,19 @@
          36.Sukudo problem using recursion-backtracking leetcode37 class name : SudokuSolver <br />
 **StriversA2ZDSA** <br />
 Step1. Lec 2: Build-up Logical thinking: Pattern problems com.dsa.striversa2z.step1_2.Patterns<br />
+       Lec 4: Basic maths: Pattern problems com.dsa.striversa2z.step1_4.maths.BasicMaths<br />
+             1. count digits <br />
+             2. Reverse Of Number leetcode#7 <br />
+             3. Palindrome Of Number leetcode#9 <br />
+             4. print divisors of a given number n <br />
+             5. Sum of all divisors from 1 to n method name:sumOfDivisors (geeks for geeks)<br />
+             6. Given number is prime or not isPrime <br />
+             7. GCD/HCF of a given two numbers <br />
+
+
+
+
+
 
 
          
