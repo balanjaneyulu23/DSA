@@ -54,6 +54,28 @@ Step1. Lec 2: Build-up Logical thinking: Pattern problems com.dsa.striversa2z.st
              5. Sum of all divisors from 1 to n method name:sumOfDivisors (geeks for geeks)<br />
              6. Given number is prime or not isPrime <br />
              7. GCD/HCF of a given two numbers <br />
+**StriversA2ZDSA Basic Recursion** <br />
+             1. Print numbers from 1 to n using recursion <br />
+             2.Print numbers from n to 1 using recursion <br />
+             3. Print numbers from 1 to N using recursion back track <br />
+             4. sum of the N numbers using parameterized way and functional way  <br />
+             5. Factorial of a given number  N  <br />
+             6. Reverse array using recursion  <br />
+**StriversA2ZDSA Basic Hashing** <br />
+             1. find out the frequency of an numbers in the given array of elements <br />
+             2. Find the highest/lowest frequency element (both Brute force and optimal  approach) <br />
+**StriversA2ZDSA Sorting techniques** <br />
+             1. Sort a given array using selection sort algorithm <br />
+             2. Sort a given array using bubble sort algorithm <br />
+             3. Sort a given array using insertion sort algorithm <br />
+             4. Sort a given array using merge sort algorithm using recursion <br />
+
+
+
+
+
+
+
 
 
 
