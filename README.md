@@ -69,6 +69,8 @@ Step1. Lec 2: Build-up Logical thinking: Pattern problems com.dsa.striversa2z.st
              2. Sort a given array using bubble sort algorithm <br />
              3. Sort a given array using insertion sort algorithm <br />
              4. Sort a given array using merge sort algorithm using recursion <br />
+             5. Sort a given array using quick sort algorithm using recursion <br />
+
 
 
 

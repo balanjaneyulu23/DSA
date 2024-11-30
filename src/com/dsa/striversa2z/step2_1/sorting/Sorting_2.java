@@ -7,7 +7,8 @@ import java.util.List;
 public class Sorting_2 {
     public static void main(String[] args) {
         int[] arr = {4, 2, 1, 6, 7};
-        mergeSort(arr, 0, arr.length - 1);
+        //mergeSort(arr, 0, arr.length - 1);
+        quickSort(arr,0,arr.length-1);
         System.out.println(Arrays.toString(arr));
     }
 
@@ -67,5 +68,46 @@ public class Sorting_2 {
         for (int i = low; i <= high; i++) {
             arr[i] = temp.get(i - low);
         }
+    }
+
+    public static void quickSort(int[] arr, int low, int high) {
+        if (low < high) {
+            //finding the partition index
+            int pIndex = partition(arr, low, high);
+
+            //left part of the array which is left part to Partition Index
+            quickSort(arr, low, pIndex - 1);
+            //Right part of the array which is right part to Partition Index
+            quickSort(arr, pIndex + 1, high);
+        }
+
+    }
+
+    private static int partition(int[] arr, int low, int high) {
+        //let's consider first element in this range as a pivot
+        int pivot = arr[low];
+        int i = low;
+        int j = high;
+
+        while (i < j) {
+            while (i <= high-1 && arr[i] <= pivot) {
+                i++;
+            }
+            while (j >= low + 1 && arr[j] > pivot) {
+                j--;
+            }
+
+            if (i < j) {
+                swap(arr, i, j);
+            }
+        }
+        swap(arr, low, j);
+        return j;
+    }
+
+    private static void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 }
