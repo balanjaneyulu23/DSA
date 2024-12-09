@@ -70,6 +70,23 @@ Step1. Lec 2: Build-up Logical thinking: Pattern problems com.dsa.striversa2z.st
              3. Sort a given array using insertion sort algorithm <br />
              4. Sort a given array using merge sort algorithm using recursion <br />
              5. Sort a given array using quick sort algorithm using recursion <br />
+**StriversA2ZDSA Problems on Array[Easy]** <br />
+             1. Finding the largest element in a given array <br />
+             2. Second-largest element in a given  array <br />
+             3. Check if the array is sorted <br />
+             4. Remove duplicates from Sorted array <br />
+             5. Left Rotate an array by one place <br />
+             6. Left rotate an array by D places <br />
+             7. Move Zeros to end <br />
+             8. Find the Union <br />
+             9. find Intersection<br />
+             10.missingNumber in an array leetcode 268 <br />
+             11.Maximum Consecutive Ones leetcode 485 <br />
+             12.Single number leetcode 136 <br />
+             13. Longest Sub-Array with Sum K and negative and positive <br />
+
+
+
 
 
 
