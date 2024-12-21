@@ -5,7 +5,7 @@ import java.util.*;
 public class EasyArrayProblems {
     public static void main(String[] args) {
 
-        int[] arr = {2, 0, 0, 3};
+        int[] arr = {10, 5, 2, 7, 1, 9};
         // int[] a = {1, 2, 3, 4, 5};
         //int[] b = {1, 2, 3, 6, 7};
         // System.out.println(removeDuplicateUsingBruetForce(arr));
@@ -15,7 +15,7 @@ public class EasyArrayProblems {
         // System.out.println(findIntersection(a, b));
         //System.out.println(Arrays.toString(arr));
         // System.out.println(missingNumber(arr));
-        System.out.println(lenOfLongestSubarrOptimalForPositiveNum(arr, 3));
+        System.out.println(lenOfLongestSubarrOptimalForPositiveNum(arr, 15));
     }
 
     /**
@@ -369,27 +369,29 @@ public class EasyArrayProblems {
      * @return
      */
     static int lenOfLongestSubarrOptimalForPositiveNum(int[] arr, int k) {
-        int arrSize = arr.length;
-        int left = 0, right = 0, maxLen = 0;
-        long sum = 0;
-
-        while (right < arrSize) {
-            if (sum < k) {
-                sum += arr[right];
-                right++;
-            }
-
+        int left = 0;
+        int right = 0;
+        int n = arr.length;
+        int maxLeng = 0;
+        int sum = arr[right];
+        while (right < n) {
             while (left < right && sum > k) {
                 sum -= arr[left];
                 left++;
             }
 
             if (sum == k) {
-                maxLen = Math.max(maxLen, right - left);
-                right++;
+                maxLeng = Math.max(maxLeng, right - left + 1);
+            }
+
+            right++;
+
+            if (right < n) {
+                sum += arr[right];
             }
         }
-        return maxLen;
+
+        return maxLeng;
     }
 
     /**

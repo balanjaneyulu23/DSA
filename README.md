@@ -84,6 +84,17 @@ Step1. Lec 2: Build-up Logical thinking: Pattern problems com.dsa.striversa2z.st
              11.Maximum Consecutive Ones leetcode 485 <br />
              12.Single number leetcode 136 <br />
              13. Longest Sub-Array with Sum K and negative and positive <br />
+**StriversA2ZDSA Problems on Array[Medium]** <br />
+            1. two sum problem leet code:1 <br />
+            2. Sort an array of 0's 1's and 2's leet code: 75<br />
+            3. Majority Element leet code: 169 <br />
+            4. Kadane's Algorithm, maximum subarray sum leet code#53<br />
+            5. Best Time to Buy and Sell Stock leet code#121<br />
+            6. Next Permutation leet code#31<br />
+
+
+
+
 
 
 
