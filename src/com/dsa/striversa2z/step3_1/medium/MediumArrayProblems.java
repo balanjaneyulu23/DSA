@@ -4,9 +4,27 @@ import java.util.*;
 
 public class MediumArrayProblems {
     public static void main(String[] args) {
-        int[] nums = {1,2,3};
-        nextPermutation(nums);
-        System.out.println(Arrays.toString(nums));
+        int[][] matrix = {
+                {1, 1, 1},
+                {1, 0, 1},
+                {1, 1, 1}
+        };
+
+        System.out.println("Before conversion");
+        for (int[] ints : matrix) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                System.out.print(ints[j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println("After conversion");
+        setZeroesBruteBetter(matrix);
+        for (int[] ints : matrix) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                System.out.print(ints[j] + " ");
+            }
+            System.out.println();
+        }
 
     }
 
@@ -319,4 +337,117 @@ public class MediumArrayProblems {
             end--;
         }
     }
+
+    static ArrayList<Integer> leaders(int[] arr) {
+        int arrSize = arr.length;
+        int maxEle = Integer.MIN_VALUE;
+        ArrayList<Integer> leaders = new ArrayList<>();
+        for (int i = arrSize - 1; i >= 0; i--) {
+            if (arr[i] > maxEle) {
+                maxEle = arr[i];
+                leaders.add(arr[i]);
+            }
+        }
+        Collections.reverse(leaders);
+
+        return leaders;
+    }
+
+
+    static int longestConsecutive(int[] nums) {
+        int longestSeq = 0;
+
+        //storing elements in set
+        Set<Integer> set = new HashSet<>();
+        for (int num : nums) {
+            set.add(num);
+        }
+
+        for (int num : nums) {
+            if (!set.contains(num - 1)) {
+                int cnt = 1;
+                int x = num;
+                while (set.contains(x + 1)) {
+                    cnt++;
+                    x = x + 1;
+                }
+
+                longestSeq = Math.max(cnt, longestSeq);
+            }
+        }
+
+        return longestSeq;
+    }
+
+    /**
+     * lEETCODE#73 set-matrix-zeroes
+     * brute force approach
+     *
+     * @param matrix
+     */
+    static void setZeroesBruteForce(int[][] matrix) {
+        //If cell is having zero then mark that column and row as -1
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (matrix[i][j] == 0) {
+                    //each cell in the row as -1
+                    markRow(matrix, i);
+                    // each cell in column as -1
+                    markCol(matrix, j);
+                }
+            }
+        }
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (matrix[i][j] == -1) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+    }
+
+    private static void markCol(int[][] matrix, int j) {
+        for (int i = 0; i < matrix.length; i++) {
+            matrix[i][j] = -1;
+        }
+    }
+
+    private static void markRow(int[][] matrix, int i) {
+        for (int j = 0; j < matrix[0].length; j++) {
+            matrix[i][j] = -1;
+        }
+    }
+
+    /**
+     * Leetcode#73  set-matrix-zeroes
+     * Better approach
+     *
+     * @param matrix
+     */
+    static void setZeroesBruteBetter(int[][] matrix) {
+        //temp array to store column indicators
+        int[] col = new int[matrix[0].length];
+        int[] row = new int[matrix.length];
+
+        // traverse array to zero element cell
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (matrix[i][j] == 0) {
+                    col[j] = 1;
+                    row[i] = 1;
+                }
+            }
+        }
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (col[j] == 1 || row[i] == 1) {
+                    matrix[i][j] = 0;
+                }
+            }
+
+        }
+    }
+
 }

@@ -91,6 +91,11 @@ Step1. Lec 2: Build-up Logical thinking: Pattern problems com.dsa.striversa2z.st
             4. Kadane's Algorithm, maximum subarray sum leet code#53<br />
             5. Best Time to Buy and Sell Stock leet code#121<br />
             6. Next Permutation leet code#31<br />
+            7. Array Leaders geeks for geeks problem<br />
+            8. Longest Consecutive Sequence leetcode#128<br />
+            9. Set Matrix Zeroes leetcode#73<br />
+
+
 
 
 
