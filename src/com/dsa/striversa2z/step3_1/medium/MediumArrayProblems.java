@@ -4,27 +4,10 @@ import java.util.*;
 
 public class MediumArrayProblems {
     public static void main(String[] args) {
-        int[][] matrix = {
-                {1, 1, 1},
-                {1, 0, 1},
-                {1, 1, 1}
-        };
 
-        System.out.println("Before conversion");
-        for (int[] ints : matrix) {
-            for (int j = 0; j < matrix[0].length; j++) {
-                System.out.print(ints[j] + " ");
-            }
-            System.out.println();
-        }
-        System.out.println("After conversion");
-        setZeroesBruteBetter(matrix);
-        for (int[] ints : matrix) {
-            for (int j = 0; j < matrix[0].length; j++) {
-                System.out.print(ints[j] + " ");
-            }
-            System.out.println();
-        }
+        int[] nums = {1,-1,0};
+        System.out.println(subarraySum(nums, 0));
+
 
     }
 
@@ -450,4 +433,135 @@ public class MediumArrayProblems {
         }
     }
 
+    /**
+     * Leetcode#73  set-matrix-zeroes
+     * Optimal Solution
+     *
+     * @param matrix
+     */
+    static void setZeroesBruteOptimal(int[][] matrix) {
+        //matrix[0][j]-col indicator
+        //matrix[i][0]-row indicator
+        // marking 0's in 0th row and 0th column for indicator
+        int col0 = 1;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (matrix[i][j] == 0) {
+                    matrix[i][0] = 0;
+                    if (j != 0) {
+                        matrix[0][j] = 0;
+                    } else {
+                        col0 = 0;
+                    }
+                }
+            }
+        }
+        System.out.println("Fill zero");
+        // fill with zero's in n-1*m-1 grid matrix(except 0th row and 0th column)
+        for (int i = 1; i < matrix.length; i++) {
+            for (int j = 1; j < matrix[0].length; j++) {
+                if (matrix[i][j] != 0) {
+                    if (matrix[0][j] == 0 || matrix[i][0] == 0) {
+                        matrix[i][j] = 0;
+                    }
+                }
+
+            }
+        }
+
+        if (matrix[0][0] == 0) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                matrix[0][j] = 0;
+            }
+        }
+
+        if (col0 == 0) {
+            for (int i = 0; i < matrix.length; i++) {
+                matrix[i][0] = 0;
+            }
+        }
+
+    }
+
+    static void rotate(int[][] matrix) {
+        // transpose the matrix
+        for (int i = 0; i < matrix.length - 1; i++) {
+            for (int j = i + 1; j < matrix.length; j++) {
+                if (i != j) {
+                    swap(matrix, i, j);
+                }
+            }
+        }
+
+        // reverse matrix
+        for (int[] ints : matrix) {
+            reverseArr(ints, 0, ints.length - 1);
+        }
+    }
+
+    private static void swap(int[][] matrix, int i, int j) {
+        int temp = matrix[i][j];
+        matrix[i][j] = matrix[j][i];
+        matrix[j][i] = temp;
+    }
+
+    public static List<Integer> spiralOrder(int[][] matrix) {
+        List<Integer> spiralOrderList = new ArrayList<>();
+
+        //declaring variables for all sides of matrix
+        int leftCol = 0, rightCol = matrix[0].length - 1;
+        int topRow = 0, buttomRow = matrix.length - 1;
+
+        // traversal condition
+        while (topRow <= buttomRow && leftCol <= rightCol) {
+
+            // traversing from left to right i.e top row is unchanged but column changes
+            for (int i = leftCol; i <= rightCol; i++) {
+                spiralOrderList.add(matrix[topRow][i]);
+            }
+            topRow++;
+
+            //traversing from top row to bottom in last column
+            for (int i = topRow; i <= buttomRow; i++) {
+                spiralOrderList.add(matrix[i][rightCol]);
+            }
+            rightCol--;
+
+            // traversing from right to left, buttom row is  un changed but right col is changing
+            if (topRow <= buttomRow) { // bottom row is existed when there is a column -edge case
+                for (int i = rightCol; i >= leftCol; i--) {
+                    spiralOrderList.add(matrix[buttomRow][i]);
+                }
+                buttomRow--;
+            }
+
+
+            // traversing from buttom row  to top row, col  is  un changed but bottom row is changing
+            if (leftCol <= rightCol) { // col is existed when there is a row -edge case
+                for (int i = buttomRow; i >= topRow; i--) {
+                    spiralOrderList.add(matrix[i][leftCol]);
+                }
+                leftCol++;
+            }
+
+        }
+        return spiralOrderList;
+    }
+
+    static int subarraySum(int[] nums, int k) {
+        int prefixSum = 0, count = 0;
+        Map<Integer, Integer> map = new HashMap<>();
+        //initially we have prefix sum zero hence putting 0 and 1 as first element in key
+        map.put(0, 1);
+        for (int num : nums) {
+            // calculate pre fix sum
+            prefixSum += num;
+
+            //remove x-k from prefix sum
+            int remove = prefixSum - k;
+                count += map.getOrDefault(remove,0);
+                map.put(prefixSum, map.getOrDefault(prefixSum,0) + 1);
+        }
+        return count;
+    }
 }

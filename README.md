@@ -94,6 +94,12 @@ Step1. Lec 2: Build-up Logical thinking: Pattern problems com.dsa.striversa2z.st
             7. Array Leaders geeks for geeks problem<br />
             8. Longest Consecutive Sequence leetcode#128<br />
             9. Set Matrix Zeroes leetcode#73<br />
+            10. Spiral Matrix leetcode#54<br />
+            11. Subarray Sum Equals K leetcode#560 <br />
+**StriversA2ZDSA Problems on Array[Hard]** <br />
+            1. Pascal's Triangle leet code:118 <br />
+
+
 
 
 
