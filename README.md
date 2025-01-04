@@ -98,6 +98,9 @@ Step1. Lec 2: Build-up Logical thinking: Pattern problems com.dsa.striversa2z.st
             11. Subarray Sum Equals K leetcode#560 <br />
 **StriversA2ZDSA Problems on Array[Hard]** <br />
             1. Pascal's Triangle leet code:118 <br />
+            2. Majority Element II leet code#229 <br />
+            3. 3Sum leetcode#15 <br />
+
 
 
 
