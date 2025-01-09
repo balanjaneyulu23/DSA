@@ -1,13 +1,11 @@
 package com.dsa.striversa2z.step3_1.hard;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class ArrayHardProblems {
     public static void main(String[] args) {
-        int[] nums = {-2,0,1,1,2};
-        System.out.println(threeSum(nums));
+        int[] nums = {4, 2, 2, 6, 4};
+        System.out.println(subArrayXORK(nums, 6));
     }
 
     public static List<List<Integer>> generate(int numRows) {
@@ -76,6 +74,7 @@ public class ArrayHardProblems {
 
     /**
      * 3Sum leetcode#15
+     *
      * @param nums
      * @return
      */
@@ -103,12 +102,99 @@ public class ArrayHardProblems {
                     j++;
                     k--;
                     while (j < k && nums[j] == nums[j - 1]) j++;
-                    while (j < k && nums[k] == nums[k+1]) k--;
+                    while (j < k && nums[k] == nums[k + 1]) k--;
                 }
             }
 
         }
         return answer;
 
+    }
+
+    public static List<List<Integer>> fourSum(int[] nums, int target) {
+        //sort the array
+        Arrays.sort(nums);
+        int arrSize = nums.length;
+        //result list
+        List<List<Integer>> answer = new ArrayList<>();
+        for (int i = 0; i < arrSize; i++) {
+            if (i != 0 && nums[i] == nums[i - 1]) continue;
+            for (int j = i + 1; j < arrSize; j++) {
+                if (j != i + 1 && nums[j] == nums[j - 1]) continue;
+                int k = j + 1;
+                int l = arrSize - 1;
+                while (k < l) {
+                    long sum = nums[i];
+                    sum += nums[j];
+                    sum += nums[k];
+                    sum += nums[l];
+                    if (sum > target) {
+                        l--;
+                    } else if (sum < target) {
+                        k++;
+                    } else {
+                        answer.add(Arrays.asList(nums[i],
+                                nums[j], nums[k], nums[l]));
+                        k++;
+                        l--;
+                        while (k < l && nums[k] == nums[k - 1]) {
+                            k++;
+                        }
+
+                        while (k < l && nums[l] == nums[l + 1]) {
+                            l--;
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+        return answer;
+    }
+
+    static int maxLen(int arr[]) {
+        //store prefix sum as a key and it's index as value
+        Map<Integer, Integer> map = new HashMap<>();
+        int maxLen = 0;
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+            if (sum == 0) {
+                maxLen = i + 1;
+            } else {
+                if (map.containsKey(sum)) {
+                    maxLen = Math.max(maxLen, i - map.get(sum));
+                } else {
+                    map.put(sum, i);
+                }
+            }
+        }
+
+        return maxLen;
+    }
+
+    static int subArrayXORK(int[] a, int k) {
+        int n = a.length;
+        int xr = 0;
+        int count = 0;
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(0, 1);
+        for (int j : a) {
+            xr = xr ^ j;
+            int x = xr ^ k;
+            if (map.containsKey(x)) {
+                count = count + map.get(x);
+            }
+
+            if (map.containsKey(xr)) {
+                map.put(xr, map.get(xr)+1);
+            } else {
+                map.put(xr, 1);
+            }
+        }
+
+        return count;
     }
 }

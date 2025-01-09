@@ -100,6 +100,11 @@ Step1. Lec 2: Build-up Logical thinking: Pattern problems com.dsa.striversa2z.st
             1. Pascal's Triangle leet code:118 <br />
             2. Majority Element II leet code#229 <br />
             3. 3Sum leetcode#15 <br />
+            4. 4Sum leetcode#18 <br />
+            5. largest sub array with 0 sum geeks for geeks </br>
+            6. count the no of sub array's with given xor k</ br>
+
+
 
 
 
