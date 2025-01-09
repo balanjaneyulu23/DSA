@@ -103,6 +103,8 @@ Step1. Lec 2: Build-up Logical thinking: Pattern problems com.dsa.striversa2z.st
             4. 4Sum leetcode#18 <br />
             5. largest sub array with 0 sum geeks for geeks </br>
             6. count the no of sub array's with given xor k</ br>
+            7. Merge Intervals leetoce#56 </br>
+
 
 
 

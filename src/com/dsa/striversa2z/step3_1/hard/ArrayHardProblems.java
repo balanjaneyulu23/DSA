@@ -4,8 +4,8 @@ import java.util.*;
 
 public class ArrayHardProblems {
     public static void main(String[] args) {
-        int[] nums = {4, 2, 2, 6, 4};
-        System.out.println(subArrayXORK(nums, 6));
+        int[][] nums = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
+        System.out.println(mergeOptimal(nums));
     }
 
     public static List<List<Integer>> generate(int numRows) {
@@ -189,12 +189,65 @@ public class ArrayHardProblems {
             }
 
             if (map.containsKey(xr)) {
-                map.put(xr, map.get(xr)+1);
+                map.put(xr, map.get(xr) + 1);
             } else {
                 map.put(xr, 1);
             }
         }
 
         return count;
+    }
+
+    public static List<List<Integer>> merge(int[][] intervals) {
+        List<List<Integer>> answer = new ArrayList<>();
+        int n = intervals.length;
+        //sorting the given array intervals
+        Arrays.sort(intervals, (int[] a, int[] b) -> {
+            return a[0] - b[0];
+        });
+
+        for (int i = 0; i < n; i++) { // select an interval:
+            int start = intervals[i][0];
+            int end = intervals[i][1];
+            List<Integer> list = new ArrayList<>();
+
+            //Skip all the merged intervals:
+            if (!answer.isEmpty() && answer.getLast().getLast() >= end) {
+                continue;
+            }
+
+            //check the rest of the intervals:
+            for (int j = i + 1; j < n; j++) {
+                if (end >= intervals[j][0]) {
+                    end = Math.max(end, intervals[j][1]);
+                } else {
+                    break;
+                }
+
+            }
+            list.add(start);
+            list.add(end);
+            answer.add(list);
+
+        }
+        return answer;
+    }
+
+    static int[][] mergeOptimal(int[][] intervals) {
+        List<List<Integer>> ansList = new ArrayList<>();
+
+        //sort an array
+        Arrays.sort(intervals, (int[] a, int[] b) -> a[0] - b[0]);
+
+        for (int i = 0; i < intervals.length; i++) {
+            if (ansList.isEmpty() || intervals[i][0] > ansList.getLast().getLast()) {
+                ansList.add(Arrays.asList(intervals[i][0], intervals[i][1]));
+            } else {
+                ansList.getLast().set(1, Math.max(ansList.getLast().get(1), intervals[i][1]));
+            }
+        }
+        return ansList.stream()
+                .map(l -> l.stream()
+                .mapToInt(Integer::intValue).toArray()).toArray(int[][]::new);
     }
 }
