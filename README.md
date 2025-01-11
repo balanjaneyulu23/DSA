@@ -104,6 +104,12 @@ Step1. Lec 2: Build-up Logical thinking: Pattern problems com.dsa.striversa2z.st
             5. largest sub array with 0 sum geeks for geeks </br>
             6. count the no of sub array's with given xor k</ br>
             7. Merge Intervals leetoce#56 </br>
+            8. Merge two sorted arrays without extra space leetcode#88 </br>
+            9. Find the repeating and missing number geeks for geeks < /br>
+            10. Count Inversions geeks for geeks (refer striver notes for code) </br >
+            11. Reverse Pairs leetcode#493 </br>
+            12. Maximum Product Subarray leetcode#152 < /br>
+**StriversA2ZDSA Problems Binary search 1D 2D, search space** <br />
 
 
 
