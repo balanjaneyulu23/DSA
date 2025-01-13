@@ -110,6 +110,10 @@ Step1. Lec 2: Build-up Logical thinking: Pattern problems com.dsa.striversa2z.st
             11. Reverse Pairs leetcode#493 </br>
             12. Maximum Product Subarray leetcode#152 < /br>
 **StriversA2ZDSA Problems Binary search 1D 2D, search space** <br />
+            1. Binary Search to find X in sorted array leetcode#704 </br>
+            2. Floor in a Sorted Array  geeks for geeks</br>
+            3. Ceil The Floor </br>
+            4. Search Insert Position leetcode#35 </br>
 
 
 
