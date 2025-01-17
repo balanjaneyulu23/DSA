@@ -114,6 +114,15 @@ Step1. Lec 2: Build-up Logical thinking: Pattern problems com.dsa.striversa2z.st
             2. Floor in a Sorted Array  geeks for geeks</br>
             3. Ceil The Floor </br>
             4. Search Insert Position leetcode#35 </br>
+            5. Floor/Ceil in Sorted Array geeks for geeks </br>
+            6. Find First and Last Position of Element in Sorted Array leetcode#34 </br>
+            7. Number of occurrence geeks for geeks</br>
+            8.Search in Rotated Sorted Array I leetcode#33 </br>
+            9.Search in Rotated Sorted Array II leetcode#81 </br>
+           10. Find minimum in Rotated Sorted Array leetcode#153 </br>
+           11. Find Kth Rotation geeks for geeks</br>
+           12. Find Peak Element leetcode#162 </br>
+
 
 
 
