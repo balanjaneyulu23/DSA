@@ -122,6 +122,20 @@ Step1. Lec 2: Build-up Logical thinking: Pattern problems com.dsa.striversa2z.st
            10. Find minimum in Rotated Sorted Array leetcode#153 </br>
            11. Find Kth Rotation geeks for geeks</br>
            12. Find Peak Element leetcode#162 </br>
+**StriversA2ZDSA Problems Binary search  on Answers ** <br />
+           1. Sqrt(x) leetcode#69</br>
+           2.Find the Nth root of a number using binary search geeks for geeks</br>
+           3.Koko Eating Bananas leetcode#875</br>
+           4.Minimum days to make M bouquets leetcode#1482</br>
+           5.Find the smallest Divisor leetcode#1283</br>
+           6.Capacity to Ship Packages within D Days leetcode#1011</br>
+           7.Kth Missing Positive Number leetcode#1539</br>
+           8. Aggressive Cows </br>
+           9. Book Allocation Problem code 360 coding ninja</br>
+           10. Split array - Largest Sum leetcode#410</br>
+           11. Painter's partition code 360 coding ninja</br>
+
+       
 
 
 
