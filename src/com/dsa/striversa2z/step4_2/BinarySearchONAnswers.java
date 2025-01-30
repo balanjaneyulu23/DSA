@@ -1,14 +1,11 @@
 package com.dsa.striversa2z.step4_2;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.OptionalInt;
+import java.util.*;
 
 public class BinarySearchONAnswers {
     public static void main(String[] args) {
-        Integer[] nums = {25, 46, 28, 49, 24};
-        System.out.println(findPagesOptimal(new ArrayList<Integer>(Arrays.asList(nums)), 5, 4));
+        int[] nums = {1, 7};
+        System.out.println(minimiseMaxDistance(nums, 2));
     }
 
     static int floorSqrtBruteForce(int n) {
@@ -380,6 +377,177 @@ public class BinarySearchONAnswers {
             }
         }
         return partionsCount;
+    }
+
+    public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        int n1 = nums1.length;
+        int n2 = nums2.length;
+        int cnt = 0;
+        int ind2 = (n1 + n2) / 2;
+        int ind1 = ind2 - 1;
+        int ind1ele = -1;
+        int ind2ele = -1;
+        int i = 0, j = 0;
+        while (i < n1 && j < n2) {
+            if (nums1[i] < nums2[j]) {
+                if (cnt == ind1) ind1ele = nums1[i];
+                if (cnt == ind2) ind2ele = nums1[i];
+                i++;
+            } else {
+                if (cnt == ind1) ind1ele = nums2[j];
+                if (cnt == ind2) ind2ele = nums2[j];
+                j++;
+            }
+            cnt++;
+        }
+
+        while (i < n1) {
+            if (cnt == ind1) ind1ele = nums1[i];
+            if (cnt == ind2) ind2ele = nums1[i];
+            cnt++;
+            i++;
+        }
+        while (j < n2) {
+            if (cnt == ind1) ind1ele = nums2[j];
+            if (cnt == ind2) ind2ele = nums2[j];
+            cnt++;
+            j++;
+        }
+        return (n1 + n2) % 2 != 0 ? ind2ele : (double) (ind1ele + ind2ele) / 2;
+    }
+
+    public static int kthElement(int a[], int b[], int k) {
+        int n1 = a.length;
+        int n2 = b.length;
+        int i = 0, j = 0;
+        int cnt = 1;
+        while (i < n1 && j < n2) {
+            if (a[i] < b[j]) {
+                if (cnt == k) return a[i];
+                i++;
+            } else {
+                if (cnt == k) return b[j];
+                j++;
+            }
+            cnt++;
+        }
+        while (i < n1) {
+            if (cnt == k) return a[i];
+            i++;
+            cnt++;
+        }
+        while (j < n2) {
+            if (cnt == k) return b[j];
+            j++;
+            cnt++;
+        }
+        return -1;
+    }
+
+    public static double minimiseMaxDistanceBrute(int[] arr, int k) {
+        int arrSize = arr.length;
+        int[] howMany = new int[arrSize - 1];
+
+        //pick up the gas stations
+        for (int i = 1; i <= k; i++) {
+            double maxSection = -1;
+            int maxInd = -1;
+            // traversing the array to know the max section to place gas station
+            for (int j = 0; j < arrSize - 1; j++) {
+                double diff = arr[j + 1] - arr[j];
+                double sectionLength = diff / (double) (howMany[j] + 1);
+                if (sectionLength > maxSection) {
+                    maxSection = sectionLength;
+                    maxInd = j;
+                }
+            }
+            howMany[maxInd]++;
+        }
+
+        // finding the max section length
+        double maxSec = -1;
+        for (int i = 0; i < arrSize - 1; i++) {
+            double diff = arr[i + 1] - arr[i];
+            double sectionLen = diff / (double) (howMany[i] + 1);
+            maxSec = Math.max(maxSec, sectionLen);
+        }
+        return maxSec;
+    }
+
+    static class Pair {
+        double first;
+        int second;
+
+        public Pair(double first, int second) {
+            this.first = first;
+            this.second = second;
+        }
+    }
+
+    public static double minimiseMaxDistanceBetter(int[] arr, int k) {
+        int arrSize = arr.length;
+        //to store sections
+        int[] howMany = new int[arrSize - 1];
+
+        // creating priority queue
+        PriorityQueue<Pair> priorityQueue = new PriorityQueue<>((a, b) -> Double.compare(b.first, a.first));
+        //storing diff and it's index in priority queue
+        for (int i = 0; i < arrSize - 1; i++) {
+            priorityQueue.add(new Pair(arr[i + 1] - arr[i], i));
+        }
+
+        // to pick up the gas stations
+        for (int gasStations = 1; gasStations <= k; gasStations++) {
+            //fetching max value from priority queue and remove that from queue
+            Pair pair = priorityQueue.poll();
+            assert pair != null;
+            int maxInd = pair.second;
+            // adding gas station at maxInd
+            howMany[maxInd]++;
+            double initDiff = arr[maxInd + 1] - arr[maxInd];
+            double newSection = initDiff / (double) (howMany[maxInd] + 1);
+            priorityQueue.add(new Pair(newSection, maxInd));
+        }
+
+        assert priorityQueue.peek() != null;
+        return priorityQueue.peek().first;
+    }
+
+    public static double minimiseMaxDistance(int[] arr, int k) {
+        int n = arr.length; // size of the array
+        double low = 0;
+        double high = 0;
+
+        //Find the maximum distance:
+        for (int i = 0; i < n - 1; i++) {
+            high = Math.max(high, (double) (arr[i + 1] - arr[i]));
+        }
+
+        //Apply Binary search: n
+        double diff = 1e-6;
+        while (high - low > diff) {
+            double mid = (low + high) / (2.0);
+            int cnt = numberOfGasStationsRequired(mid, arr);
+            if (cnt > k) {
+                low = mid;
+            } else {
+                high = mid;
+            }
+        }
+        return high;
+    }
+
+    public static int numberOfGasStationsRequired(double dist, int[] arr) {
+        int n = arr.length; // size of the array
+        int cnt = 0;
+        for (int i = 1; i < n; i++) {
+            int numberInBetween = (int) ((arr[i] - arr[i - 1]) / dist);
+            if ((arr[i] - arr[i - 1]) == (dist * numberInBetween)) {
+                numberInBetween--;
+            }
+            cnt += numberInBetween;
+        }
+        return cnt;
     }
 
 }
