@@ -143,6 +143,18 @@ Step1. Lec 2: Build-up Logical thinking: Pattern problems com.dsa.striversa2z.st
           3. Search a 2D Matrix leetcode#240< /br>
           4. Find Peak Element (2D Matrix) leetcode#1901< /br>
           5. Matrix Median geeks for geeks< /br>
+**StriversA2ZDSA Basic String problems ** <br />
+         1. Reverse words in a given string / Palindrome Check leetcode#151< /br>
+         2. Largest odd number in a string  leetcode#1903< /br>
+         3. Longest Common Prefix leetcode#14< /br>
+         4. Isomorphic String leetcode#205< /br>
+
+
+
+
+
+
+
 
 
 
