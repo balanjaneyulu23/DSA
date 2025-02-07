@@ -1,13 +1,12 @@
 package com.dsa.striversa2z.step5_1;
 
-import java.util.Arrays;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class BasicStrings {
     public static void main(String[] args) {
+        System.out.println(romanToInt("III"));
 
-        String [] str={"flower","flow","flight"};
-        System.out.println(isIsomorphic("egg","adq"));
     }
 
     public static String reverseWords(String s) {
@@ -82,19 +81,131 @@ public class BasicStrings {
     }
 
     public static boolean isIsomorphic(String s, String t) {
-        int n=s.length();
+        int n = s.length();
 
         // taking 256 is for all ascii values total 256
-        int [] first=new int[256];
-        int [] second=new int[256];
-        for (int i = 0; i <n ; i++) {
-            if (first[s.charAt(i)]!=second[t.charAt(i)]) return false;
+        int[] first = new int[256];
+        int[] second = new int[256];
+        for (int i = 0; i < n; i++) {
+            if (first[s.charAt(i)] != second[t.charAt(i)]) return false;
 
-            first[s.charAt(i)]=i+1; // +1 is for putting 1 instead of default value 0
-            second[t.charAt(i)]=i+1;
+            first[s.charAt(i)] = i + 1; // +1 is for putting 1 instead of default value 0
+            second[t.charAt(i)] = i + 1;
         }
-
         return true;
     }
 
+    public static boolean rotateString(String s, String goal) {
+        int n = s.length();
+        for (int i = 0; i < n; i++) {
+            String str = s.substring(i, n) + s.substring(0, i);
+            if (str.equals(goal)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean rotateStringOptimal(String s, String goal) {
+        if (s.length() != goal.length()) return false;
+        String doubleS = s + s;
+        return doubleS.contains(goal);
+    }
+
+    public static boolean isAnagram(String s, String t) {
+        if (s.length() != t.length()) return false;
+        //sorting two given strings
+        String first = s.chars().mapToObj(Character::toString).sorted().collect(Collectors.joining());
+        String second = t.chars().mapToObj(Character::toString).sorted().collect(Collectors.joining());
+        return first.equals(second);
+    }
+
+    public static boolean isAnagramOptimal(String s, String t) {
+        if (s.length() != t.length()) return false;
+        int[] count = new int[26];
+        for (char c : s.toCharArray()) {
+            count[c - 'a']++;
+        }
+
+        for (char c : t.toCharArray()) {
+            count[c - 'a']--;
+        }
+
+        for (int i = 0; i < 26; i++) {
+            if (count[i] != 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+    public String frequencySort(String s) {
+        StringBuilder builder = new StringBuilder();
+        //taking map to store key and it's frequency
+        Map<Character, Integer> map = new HashMap<>();
+        for (char ch : s.toCharArray()) {
+            map.put(ch, map.getOrDefault(ch, 0) + 1);
+        }
+
+        List<Character> list = new ArrayList<>(map.keySet());
+        for (char ch : list) {
+            System.out.println(ch);
+        }
+
+        list.sort((obj1, obj2) -> map.get(obj2) - map.get(obj1)
+        );
+
+        for (char ch : list) {
+            int freq = map.get(ch);
+            while (freq > 0) {
+                builder.append(ch);
+                freq--;
+            }
+        }
+        return builder.toString();
+    }
+
+    public static int maxDepth(String s) {
+        int maxVal = 0;
+        int currentCnt = 0;
+        for (char ch : s.toCharArray()) {
+            if (ch == '(') {
+                currentCnt++;
+            }
+            maxVal = Math.max(currentCnt, maxVal);
+            if (ch == ')') {
+                currentCnt--;
+            }
+        }
+        return maxVal;
+    }
+
+    public static int romanToInt(String s) {
+        char[] ch = s.toCharArray();
+        int sum = 0;
+        Map<String, Integer> romanToInMap = romanToIntMapping();
+        for (int i = 0; i < ch.length; i++) {
+            if (i + 1 < ch.length && romanToInMap.get(Character.toString(ch[i]))
+                    < romanToInMap.get(Character.toString(ch[i + 1]))) {
+                sum -= romanToInMap.get(Character.toString(ch[i]));
+            } else {
+                sum += romanToInMap.get(Character.toString(ch[i]));
+            }
+        }
+
+        return sum;
+    }
+
+    static Map<String, Integer> romanToIntMapping() {
+        Map<String, Integer> romanTomap = new HashMap<>();
+        romanTomap.put("I", 1);
+        romanTomap.put("V", 5);
+        romanTomap.put("X", 10);
+        romanTomap.put("L", 50);
+        romanTomap.put("C", 100);
+        romanTomap.put("D", 500);
+        romanTomap.put("M", 1000);
+        return romanTomap;
+    }
 }

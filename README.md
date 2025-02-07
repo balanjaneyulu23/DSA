@@ -148,6 +148,12 @@ Step1. Lec 2: Build-up Logical thinking: Pattern problems com.dsa.striversa2z.st
          2. Largest odd number in a string  leetcode#1903< /br>
          3. Longest Common Prefix leetcode#14< /br>
          4. Isomorphic String leetcode#205< /br>
+         5. Valid Anagram leetcode#242< /br>
+         6. Sort Characters By Frequency leetcode#451< /br>
+         7. Maximum Nesting Depth of the Parentheses leetcode#1614< /br>
+         8. Roman to Integer leetcode#13< /br>
+
+
 
 
 
