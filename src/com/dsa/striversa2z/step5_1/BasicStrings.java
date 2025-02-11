@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 public class BasicStrings {
     public static void main(String[] args) {
-        System.out.println(romanToInt("III"));
+        System.out.println(countSubstr("aba", 2));
 
     }
 
@@ -208,4 +208,51 @@ public class BasicStrings {
         romanTomap.put("M", 1000);
         return romanTomap;
     }
+
+    public static int myAtoi(String s) {
+        if (s == null) return 0;
+        s = s.trim();
+        if (s.isEmpty()) return 0;
+        int sign = 1;
+        if (s.charAt(0) == '-') sign = -1;
+        // checking first index has sign or not
+        int index = (s.charAt(0) == '-' || s.charAt(0) == '+') ? 1 : 0;
+        long ans = 0;
+        int max = Integer.MAX_VALUE;
+        int min = Integer.MIN_VALUE;
+        while (index < s.length()) {
+            if (s.charAt(index) == ' ' || !Character.isDigit(s.charAt(index))) {
+                return (int) (ans * sign);
+            }
+            ans = ans * 10 + s.charAt(index) - '0';
+            if (sign == -1 && sign * ans < min) return min;
+            if (sign == 1 && ans > max) return max;
+            index++;
+        }
+        return (int) (sign * ans);
+    }
+
+    static int countSubstr(String s, int k) {
+        int n = s.length();
+        int ans = 0;
+        boolean[] seen = new boolean[26];
+        for (int i = 0; i < n; i++) {
+            int distChars = 0;
+            Arrays.fill(seen, false);
+            for (int j = i; j < n; j++) {
+                if (!seen[s.charAt(j)-'a']) {
+                    distChars++;
+                }
+                
+                seen[s.charAt(j)-'a'] = true;
+                if (distChars == k) {
+                    ans++;
+                }
+            }
+        }
+        return ans;
+
+    }
+
+
 }

@@ -152,6 +152,16 @@ Step1. Lec 2: Build-up Logical thinking: Pattern problems com.dsa.striversa2z.st
          6. Sort Characters By Frequency leetcode#451< /br>
          7. Maximum Nesting Depth of the Parentheses leetcode#1614< /br>
          8. Roman to Integer leetcode#13< /br>
+         9. String to Integer (atoi) leetcode#8< /br>
+         10.Substrings with K Distinct geeks for geeks< /br>
+**StriversA2ZDSA ID Linked List ** <br />
+         1. Array to Linked List geeks for geeks< /br>
+         2. Traversing Linked List < /br>
+
+
+
+
+
 
 
 
