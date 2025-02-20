@@ -155,8 +155,24 @@ Step1. Lec 2: Build-up Logical thinking: Pattern problems com.dsa.striversa2z.st
          9. String to Integer (atoi) leetcode#8< /br>
          10.Substrings with K Distinct geeks for geeks< /br>
 **StriversA2ZDSA ID Linked List ** <br />
-         1. Array to Linked List geeks for geeks< /br>
-         2. Traversing Linked List < /br>
+         1. Introduction to LinkedList, learn about struct, and how is node represented < /br>
+         2. Array to Linked List geeks for geeks< /br>
+         3. Count Linked List Nodes geeks for geeks< /br>
+         4. Inserting a node in LinkedList geeks for geeks</br>
+         5. Delete Node in a Linked List Leetcode#237 < /br>
+         6. Search in Linked List geeks for geeks</br>
+**StriversA2ZDSA Doubly Linked List ** <br />
+         1. Introduction to DLL, learn about struct, and how is node represented (Introduction to Doubly Linked List) geeks for geeks < /br>
+         2. Insert a node in DLL geeks for geeks</br>
+         3. Delete a node in DLL geeks for geeks</br>
+         4. Reverse a DLL geeks for geeks</br>
+**StriversA2ZDSA Medium problems on Linked List ** <br />
+        1. Middle of a LinkedList [TortoiseHare Method]  leetcode#876 < /br>
+        2. Reverse Linked List leetcode#206 < /br>
+
+
+
+     
 
 
 

@@ -4,10 +4,7 @@ public class ArrayToLinkedList {
 
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5};
-        Node head = constructLL(arr);
-        //traverseLinkedList(head);
-        System.out.println(searchInLL(head,4));
-
+        System.out.println(constructLL(arr));
     }
 
     static Node constructLL(int arr[]) {
@@ -23,33 +20,7 @@ public class ArrayToLinkedList {
         return head;
     }
 
-    static void traverseLinkedList(Node head) {
-        Node temp = head;
-        while (temp != null) {
-            System.out.println(temp.getData());
-            temp = temp.getNext();
-        }
 
-    }
-
-    static int SizeofLinkedList(Node head) {
-        Node temp = head;
-        int cnt = 0;
-        while (temp != null) {
-            temp = temp.getNext();
-            cnt++;
-        }
-        return cnt;
-    }
-
-    static boolean searchInLL(Node head, int val) {
-        Node node = head;
-        while (node != null) {
-            if (node.getData() == val) return true;
-            node = node.getNext();
-        }
-        return false;
-    }
 }
 
 
