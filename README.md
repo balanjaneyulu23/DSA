@@ -169,6 +169,11 @@ Step1. Lec 2: Build-up Logical thinking: Pattern problems com.dsa.striversa2z.st
 **StriversA2ZDSA Medium problems on Linked List ** <br />
         1. Middle of a LinkedList [TortoiseHare Method]  leetcode#876 < /br>
         2. Reverse Linked List leetcode#206 < /br>
+        3. Detect a loop in LL [TortoiseHare Method] leetcode#141 < /br>
+        4. Find the starting point in LL [TortoiseHare Method] leetcode#142 < /br>
+        5. Length of Loop in LL  [TortoiseHare Method] geeks for geeks </ br>
+
+   
 
 
 

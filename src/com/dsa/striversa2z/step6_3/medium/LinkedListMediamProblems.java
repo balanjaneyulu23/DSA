@@ -1,5 +1,7 @@
 package com.dsa.striversa2z.step6_3.medium;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Stack;
 
 class ListNode {
@@ -24,11 +26,29 @@ public class LinkedListMediamProblems {
     public static void main(String[] args) {
 
         int[] arr = {1, 2, 3, 4, 5, 6};
-        ListNode head = constructList(arr);
+      /*  ListNode head = constructList(arr);
         traverseLL(head);
         System.out.println(" ");
         ListNode node = reverseListRecursion(head);
-        traverseLL(node);
+        traverseLL(node);*/
+
+        ListNode head = constructCycle();
+        System.out.println(hasCycleOptimal(head));
+
+
+    }
+
+    static ListNode constructCycle() {
+        ListNode first = new ListNode(1);
+        ListNode second = new ListNode(2);
+        ListNode third = new ListNode(3);
+        ListNode fourth = new ListNode(4);
+        ListNode fifth = new ListNode(5);
+        fifth.next = second;
+        second.next = third;
+        third.next = fourth;
+        fourth.next = third;
+        return fifth;
     }
 
     static ListNode constructList(int[] arr) {
@@ -129,6 +149,110 @@ public class LinkedListMediamProblems {
         front.next = head;
         head.next = null;
         return newHead;
+    }
+
+    public static boolean hasCycleBruteForce(ListNode head) {
+        Map<ListNode, Integer> map = new HashMap<>();
+        ListNode temp = head;
+        while (temp != null) {
+            if (map.containsKey(temp)) {
+                return true;
+            }
+            map.put(temp, 1);
+            temp = temp.next;
+        }
+        return false;
+    }
+
+    public static boolean hasCycleOptimal(ListNode head) {
+        if (head == null || head.next == null) return false;
+        ListNode fast = head;
+        ListNode slow = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (fast == slow) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static ListNode detectCycleBruteForce(ListNode head) {
+        Map<ListNode, Integer> map = new HashMap<>();
+        ListNode temp = head;
+        while (temp != null) {
+            if (map.containsKey(temp)) {
+                return temp;
+            }
+            map.put(temp, 1);
+            temp = temp.next;
+        }
+        return null;
+    }
+
+    public static ListNode detectCycleOptimal(ListNode head) {
+        if (head == null || head.next == null) return null;
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                slow = head;
+                while (slow != fast) {
+                    slow = slow.next;
+                    fast = fast.next;
+                }
+                return slow;
+            }
+        }
+        return null;
+    }
+
+
+    public int countNodesinLoopBruteForce(Node head) {
+        Map<Node, Integer> map = new HashMap<>();
+        Node temp = head;
+        int timer = 0;
+        while (temp != null) {
+            if (map.containsKey(temp)) {
+                return timer = map.get(timer);
+            }
+            map.put(temp, timer + 1);
+        }
+        return 0;
+    }
+
+    public int countNodesinLoopOptimal(Node head) {
+        if (head == null || head.next == null) return 0;
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                // found there is a cycle existed
+                int count = 1;
+                fast = fast.next;
+                while (fast != slow) {
+                    count++;
+                    fast = fast.next;
+                }
+                return count;
+            }
+        }
+        return 0;
+    }
+}
+
+class Node {
+    int data;
+    Node next;
+
+    Node(int d) {
+        data = d;
+        next = null;
     }
 }
 
