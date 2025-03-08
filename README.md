@@ -172,6 +172,20 @@ Step1. Lec 2: Build-up Logical thinking: Pattern problems com.dsa.striversa2z.st
         3. Detect a loop in LL [TortoiseHare Method] leetcode#141 < /br>
         4. Find the starting point in LL [TortoiseHare Method] leetcode#142 < /br>
         5. Length of Loop in LL  [TortoiseHare Method] geeks for geeks </ br>
+        6. Check if LL is palindrome or not in LL [TortoiseHare Method] leetcode#234 < /br>
+        7. Segrregate odd and even nodes in LL leetcode#328 < /br>
+        8. Remove Nth Node From End of List [TortoiseHare Method] leetcode#19 < /br>
+        9. Delete the Middle Node of a Linked List [TortoiseHare Method] leetcode#2095 < /br>
+        10. Sort List leetcode#148 < /br>
+        11. Sort a linked list of 0s, 1s and 2s  Geeks for geeks < /br>
+        12. Intersection of Two Linked Lists , leetcode#160 < /br>
+
+
+        
+
+
+
+
 
    
 

@@ -429,7 +429,6 @@ public class MediumArrayProblems {
                     matrix[i][j] = 0;
                 }
             }
-
         }
     }
 
