@@ -23,14 +23,22 @@ class ListNode {
 public class LinkedListMediamProblems {
     public static void main(String[] args) {
 
-        int[] arr = {1, 2, 2, 1, 2, 0, 2, 2};
-        ListNode head = constructList(arr);
-        traverseLL(head);
-        System.out.println(" ");
-        ListNode node = sortList(head);
-        traverseLL(node);
+        int[] arr = {9, 9, 9};
+        //  ListNode head = constructList(arr);
+        // traverseLL(head);
+        // System.out.println(" ");
+        //  ListNode node = addOne(head);
+        //  traverseLL(node);
        /* ListNode head = constructCycle();
         System.out.println(isPalindrome(head));*/
+
+        //GFG
+
+        Node headg = constructListGFG(arr);
+        traverseLLG(headg);
+        System.out.println(" ");
+        Node node = addOne(headg);
+        traverseLLG(node);
 
 
     }
@@ -48,6 +56,7 @@ public class LinkedListMediamProblems {
         return fifth;
     }
 
+
     static ListNode constructList(int[] arr) {
         ListNode head = new ListNode(arr[0]);
         ListNode temp = head;
@@ -59,11 +68,33 @@ public class LinkedListMediamProblems {
         return head;
     }
 
+    static Node constructListGFG(int[] arr) {
+        Node head = new Node(arr[0]);
+        Node temp = head;
+        for (int i = 1; i < arr.length; i++) {
+            Node currentNode = new Node(arr[i]);
+            currentNode.next = null;
+            temp.next = currentNode;
+            temp = currentNode;
+        }
+        return head;
+    }
+
     static void traverseLL(ListNode head) {
         if (head == null) return;
         ListNode temp = head;
         while (temp != null) {
             System.out.print(temp.val + " ");
+            temp = temp.next;
+        }
+
+    }
+
+    static void traverseLLG(Node head) {
+        if (head == null) return;
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " ");
             temp = temp.next;
         }
 
@@ -143,6 +174,18 @@ public class LinkedListMediamProblems {
 
         ListNode newHead = reverseListRecursion(head.next);
         ListNode front = head.next;
+        front.next = head;
+        head.next = null;
+        return newHead;
+    }
+
+    public static Node reverseListRecursionGFG(Node head) {
+
+        //Base case
+        if (head == null || head.next == null) return head;
+
+        Node newHead = reverseListRecursionGFG(head.next);
+        Node front = head.next;
         front.next = head;
         head.next = null;
         return newHead;
@@ -576,8 +619,78 @@ public class LinkedListMediamProblems {
         }
         return temp1;// if two lists are same then return any one of the head
     }
-}
 
+    public static Node addOneBruteForce(Node head) {
+        if (head == null) return head;
+        head = reverseListRecursionGFG(head);
+        int carry = 1;
+        Node temp = head;
+        while (temp != null) {
+            if (carry == 0) {
+                break;
+            }
+            temp.data = temp.data + carry;
+            if (temp.data < 10) {
+                carry = 0;
+            } else {
+                temp.data = 0;
+            }
+            temp = temp.next;
+        }
+        head = reverseListRecursionGFG(head);
+        if (carry == 1) {
+            Node node = new Node(carry);
+            node.next = head;
+            return node;
+        }
+        return head;
+    }
+
+    public static Node addOne(Node head) {
+        int carry = addoneHelper(head);
+        if (carry == 1) {
+            Node newNode = new Node(carry);
+            newNode.next = head;
+            return newNode;
+        }
+        return head;
+    }
+
+    private static int addoneHelper(Node head) {
+        if (head == null) {
+            return 1;
+        }
+
+        int carry = addoneHelper(head.next);
+        head.data = head.data + carry;
+        if (head.data < 10) {
+            carry = 0;
+        } else {
+            head.data = 0;
+        }
+        return carry;
+    }
+
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode t1 = l1, t2 = l2, dummy = new ListNode(-1);
+        ListNode currentNode = dummy;
+        int carry = 0;
+        while (t1 != null || t2 != null || carry == 1) {
+            int sum = 0;
+            if (t1 != null) sum += t1.val;
+            if (t2 != null) sum += t2.val;
+            sum += carry;
+            carry = sum / 10;
+            ListNode newNode = new ListNode(sum % 10);
+            currentNode.next = newNode;
+            currentNode = currentNode.next;
+
+            if (t1 != null) t1 = t1.next;
+            if (t2 != null) t2 = t2.next;
+        }
+        return dummy.next;
+    }
+}
 
 class Node {
     int data;

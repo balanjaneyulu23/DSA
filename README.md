@@ -179,6 +179,9 @@ Step1. Lec 2: Build-up Logical thinking: Pattern problems com.dsa.striversa2z.st
         10. Sort List leetcode#148 < /br>
         11. Sort a linked list of 0s, 1s and 2s  Geeks for geeks < /br>
         12. Intersection of Two Linked Lists , leetcode#160 < /br>
+        13. Add 1 to a number represented by LL Geeks for geeks< /br>
+        14. Add 2 numbers in LL leetcode#2 < /br>
+
 
 
         
