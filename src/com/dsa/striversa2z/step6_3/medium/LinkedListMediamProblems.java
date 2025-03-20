@@ -2,18 +2,18 @@ package com.dsa.striversa2z.step6_3.medium;
 
 import java.util.*;
 
-class ListNode {
+ class listNode {
     int val;
-    ListNode next;
+    listNode next;
 
-    public ListNode(int val) {
+    public listNode(int val) {
         this.val = val;
     }
 
-    ListNode() {
+    listNode() {
     }
 
-    public ListNode(int val, ListNode next) {
+    public listNode(int val, listNode next) {
         this.val = val;
         this.next = next;
     }
@@ -43,12 +43,12 @@ public class LinkedListMediamProblems {
 
     }
 
-    static ListNode constructCycle() {
-        ListNode first = new ListNode(1);
-        ListNode second = new ListNode(2);
-        ListNode third = new ListNode(1);
-        ListNode fourth = new ListNode(1);
-        ListNode fifth = new ListNode(5);
+    static listNode constructCycle() {
+        listNode first = new listNode(1);
+        listNode second = new listNode(2);
+        listNode third = new listNode(1);
+        listNode fourth = new listNode(1);
+        listNode fifth = new listNode(5);
         fifth.next = second;
         second.next = third;
         third.next = fourth;
@@ -57,11 +57,11 @@ public class LinkedListMediamProblems {
     }
 
 
-    static ListNode constructList(int[] arr) {
-        ListNode head = new ListNode(arr[0]);
-        ListNode temp = head;
+    static listNode constructList(int[] arr) {
+        listNode head = new listNode(arr[0]);
+        listNode temp = head;
         for (int i = 1; i < arr.length; i++) {
-            ListNode currentNode = new ListNode(arr[i], null);
+            listNode currentNode = new listNode(arr[i], null);
             temp.next = currentNode;
             temp = currentNode;
         }
@@ -80,9 +80,9 @@ public class LinkedListMediamProblems {
         return head;
     }
 
-    static void traverseLL(ListNode head) {
+    static void traverseLL(listNode head) {
         if (head == null) return;
-        ListNode temp = head;
+        listNode temp = head;
         while (temp != null) {
             System.out.print(temp.val + " ");
             temp = temp.next;
@@ -100,11 +100,11 @@ public class LinkedListMediamProblems {
 
     }
 
-    public static ListNode middleNode(ListNode head) {
+    public static listNode middleNode(listNode head) {
         if (head == null || head.next == null) return head;
         int size = sizeOfList(head);
         int middle = (size / 2) + 1;
-        ListNode temp = head;
+        listNode temp = head;
         int cnt = 0;
         while (temp != null) {
             cnt++;
@@ -116,9 +116,9 @@ public class LinkedListMediamProblems {
         return temp;
     }
 
-    static int sizeOfList(ListNode head) {
+    static int sizeOfList(listNode head) {
         if (head == null) return 0;
-        ListNode temp = head;
+        listNode temp = head;
         int cnt = 0;
         while (temp != null) {
             cnt++;
@@ -127,10 +127,10 @@ public class LinkedListMediamProblems {
         return cnt;
     }
 
-    public static ListNode middleNodeOptimal(ListNode head) {
+    public static listNode middleNodeOptimal(listNode head) {
         if (head == null || head.next == null) return head;
-        ListNode slow = head;
-        ListNode fast = head;
+        listNode slow = head;
+        listNode fast = head;
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
@@ -138,10 +138,10 @@ public class LinkedListMediamProblems {
         return slow;
     }
 
-    public static ListNode reverseListBruteForce(ListNode head) {
+    public static listNode reverseListBruteForce(listNode head) {
         Stack<Integer> stack = new Stack<>();
         // putting elements in stack
-        ListNode temp = head;
+        listNode temp = head;
         while (temp != null) {
             stack.push(temp.val);
             temp = temp.next;
@@ -155,11 +155,11 @@ public class LinkedListMediamProblems {
         return head;
     }
 
-    public static ListNode reverseListBetter(ListNode head) {
-        ListNode currentNode = head;
-        ListNode prev = null;
+    public static listNode reverseListBetter(listNode head) {
+        listNode currentNode = head;
+        listNode prev = null;
         while (currentNode != null) {
-            ListNode next = currentNode.next;
+            listNode next = currentNode.next;
             currentNode.next = prev;
             prev = currentNode;
             currentNode = next;
@@ -167,13 +167,13 @@ public class LinkedListMediamProblems {
         return prev;
     }
 
-    public static ListNode reverseListRecursion(ListNode head) {
+    public static listNode reverseListRecursion(listNode head) {
 
         //Base case
         if (head == null || head.next == null) return head;
 
-        ListNode newHead = reverseListRecursion(head.next);
-        ListNode front = head.next;
+        listNode newHead = reverseListRecursion(head.next);
+        listNode front = head.next;
         front.next = head;
         head.next = null;
         return newHead;
@@ -191,9 +191,9 @@ public class LinkedListMediamProblems {
         return newHead;
     }
 
-    public static boolean hasCycleBruteForce(ListNode head) {
-        Map<ListNode, Integer> map = new HashMap<>();
-        ListNode temp = head;
+    public static boolean hasCycleBruteForce(listNode head) {
+        Map<listNode, Integer> map = new HashMap<>();
+        listNode temp = head;
         while (temp != null) {
             if (map.containsKey(temp)) {
                 return true;
@@ -204,10 +204,10 @@ public class LinkedListMediamProblems {
         return false;
     }
 
-    public static boolean hasCycleOptimal(ListNode head) {
+    public static boolean hasCycleOptimal(listNode head) {
         if (head == null || head.next == null) return false;
-        ListNode fast = head;
-        ListNode slow = head;
+        listNode fast = head;
+        listNode slow = head;
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
@@ -218,9 +218,9 @@ public class LinkedListMediamProblems {
         return false;
     }
 
-    public static ListNode detectCycleBruteForce(ListNode head) {
-        Map<ListNode, Integer> map = new HashMap<>();
-        ListNode temp = head;
+    public static listNode detectCycleBruteForce(listNode head) {
+        Map<listNode, Integer> map = new HashMap<>();
+        listNode temp = head;
         while (temp != null) {
             if (map.containsKey(temp)) {
                 return temp;
@@ -231,10 +231,10 @@ public class LinkedListMediamProblems {
         return null;
     }
 
-    public static ListNode detectCycleOptimal(ListNode head) {
+    public static listNode detectCycleOptimal(listNode head) {
         if (head == null || head.next == null) return null;
-        ListNode slow = head;
-        ListNode fast = head;
+        listNode slow = head;
+        listNode fast = head;
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
@@ -285,16 +285,16 @@ public class LinkedListMediamProblems {
         return 0;
     }
 
-    public static boolean isPalindrome(ListNode head) {
+    public static boolean isPalindrome(listNode head) {
         // finding the middle of the list
-        ListNode middleNode = findMiddleNodeOfLL(head);
+        listNode middleNode = findMiddleNodeOfLL(head);
         System.out.println("Middle" + middleNode.val);
         //reverse List from middle to end
         //compare first part and second part
-        ListNode second = reverseListRecursion(middleNode.next);
+        listNode second = reverseListRecursion(middleNode.next);
         System.out.println("NewHead" + second.val);
-        ListNode temp = second;
-        ListNode temNode1 = head;
+        listNode temp = second;
+        listNode temNode1 = head;
         while (temp != null) {
             if (temp.val != temNode1.val) {
                 reverseListRecursion(second);
@@ -307,10 +307,10 @@ public class LinkedListMediamProblems {
     }
 
     // this method return lower middle node
-    private static ListNode findMiddleNodeOfLL(ListNode head) {
+    private static listNode findMiddleNodeOfLL(listNode head) {
         if (head == null || head.next == null) return head;
-        ListNode slow = head;
-        ListNode fast = head;
+        listNode slow = head;
+        listNode fast = head;
         while (fast.next != null && fast.next.next != null) {
             slow = slow.next;
             fast = fast.next.next;
@@ -318,10 +318,10 @@ public class LinkedListMediamProblems {
         return slow;
     }
 
-    public static ListNode oddEvenListBruteForce(ListNode head) {
+    public static listNode oddEvenListBruteForce(listNode head) {
         if (head == null || head.next == null) return head;
-        List<ListNode> list = new ArrayList<>();
-        ListNode temp = head;
+        List<listNode> list = new ArrayList<>();
+        listNode temp = head;
         while (temp != null) {
             list.add(temp);
             if (temp.next != null) {
@@ -343,8 +343,8 @@ public class LinkedListMediamProblems {
 
         System.out.println(list.size());
         for (int i = 1; i < list.size(); i++) {
-            ListNode first = list.get(i - 1);
-            ListNode second = list.get(i);
+            listNode first = list.get(i - 1);
+            listNode second = list.get(i);
             second.next = null;
             first.next = second;
         }
@@ -353,10 +353,10 @@ public class LinkedListMediamProblems {
     }
 
 
-    public static ListNode oddEvenList(ListNode head) {
+    public static listNode oddEvenList(listNode head) {
         if (head == null || head.next == null) return head;
 
-        ListNode oddNode = head, evenNode = head.next, evenHead = head.next;
+        listNode oddNode = head, evenNode = head.next, evenHead = head.next;
 
         while (evenNode != null && evenNode.next != null) {
             oddNode.next = oddNode.next.next;
@@ -368,7 +368,7 @@ public class LinkedListMediamProblems {
         return head;
     }
 
-    public static ListNode removeNthFromEndBruteForce(ListNode head, int n) {
+    public static listNode removeNthFromEndBruteForce(listNode head, int n) {
         if (head == null || n <= 0) return head;
 
         if (head.next == null) return null;
@@ -376,21 +376,21 @@ public class LinkedListMediamProblems {
         int size = sizeOfList(head);
         // we have to delete head
         if (size == n) {
-            ListNode newHead = head.next;
+            listNode newHead = head.next;
             head.next = null;
             return newHead;
         }
 
-        Stack<ListNode> stack = new Stack<>();
+        Stack<listNode> stack = new Stack<>();
 
-        ListNode temp = head;
+        listNode temp = head;
         while (temp != null) {
             stack.push(temp);
             temp = temp.next;
         }
 
         int sizeStack = stack.size();
-        ListNode nodeBeforeDeleteNode = null;
+        listNode nodeBeforeDeleteNode = null;
         for (int i = 1; i <= sizeStack; i++) {
             nodeBeforeDeleteNode = stack.pop();
             if (i == n + 1) {
@@ -399,29 +399,29 @@ public class LinkedListMediamProblems {
         }
 
         if (nodeBeforeDeleteNode != null && nodeBeforeDeleteNode.next != null) {
-            ListNode nodeToBeDeleted = nodeBeforeDeleteNode.next;
+            listNode nodeToBeDeleted = nodeBeforeDeleteNode.next;
             nodeBeforeDeleteNode.next = nodeToBeDeleted.next;
             nodeToBeDeleted.next = null;
         }
         return head;
     }
 
-    public static ListNode removeNthFromEndBetter(ListNode head, int n) {
+    public static listNode removeNthFromEndBetter(listNode head, int n) {
         if (head == null) return head;
 
         int sizeOfList = sizeOfList(head);
         int rest = sizeOfList - n;
         if (rest == 0) {
-            ListNode newHead = head.next;
+            listNode newHead = head.next;
             head.next = null;
             return newHead;
         }
 
-        ListNode temp = head;
+        listNode temp = head;
         while (temp != null) {
             rest--;
             if (rest == 0) {
-                ListNode nodeToDelete = temp.next;
+                listNode nodeToDelete = temp.next;
                 temp.next = nodeToDelete.next;
                 nodeToDelete.next = null;
                 return head;
@@ -431,31 +431,31 @@ public class LinkedListMediamProblems {
         return head;
     }
 
-    public static ListNode removeNthFromEndOptimal(ListNode head, int n) {
+    public static listNode removeNthFromEndOptimal(listNode head, int n) {
         if (head == null || n == 0) return head;
-        ListNode fast = head;
+        listNode fast = head;
         for (int i = 0; i < n; i++) {
             fast = fast.next;
         }
 
         if (fast == null) return head.next;
 
-        ListNode slow = head;
+        listNode slow = head;
         while (fast.next != null) {
             fast = fast.next;
             slow = slow.next;
         }
 
-        ListNode nodeToDelete = slow.next;
+        listNode nodeToDelete = slow.next;
         slow.next = nodeToDelete.next;
         nodeToDelete.next = null;
         return head;
     }
 
-    public static ListNode deleteMiddleBrute(ListNode head) {
+    public static listNode deleteMiddleBrute(listNode head) {
         if (head == null || head.next == null) return null;
         int sizeOfLL = 0;
-        ListNode temp = head;
+        listNode temp = head;
         while (temp != null) {
             sizeOfLL++;
             temp = temp.next;
@@ -466,44 +466,44 @@ public class LinkedListMediamProblems {
             temp = temp.next;
         }
 
-        ListNode nodeToDlete = temp.next;
+        listNode nodeToDlete = temp.next;
         temp.next = nodeToDlete.next;
         nodeToDlete.next = null;
         return head;
     }
 
-    public static ListNode deleteMiddleOptimal(ListNode head) {
+    public static listNode deleteMiddleOptimal(listNode head) {
         if (head == null || head.next == null) return null;
 
-        ListNode fast = head;
-        ListNode slow = head;
+        listNode fast = head;
+        listNode slow = head;
         fast = fast.next.next;
         while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
         }
-        ListNode middleNode = slow.next;
+        listNode middleNode = slow.next;
         slow.next = middleNode.next;
         middleNode.next = null;
         return head;
     }
 
-    public static ListNode sortList(ListNode head) {
+    public static listNode sortList(listNode head) {
         //If List is having single node or null then return head
         if (head == null || head.next == null) {
             return head;
         }
-        ListNode midNode = findMidNodeInList(head);
-        ListNode left = head, right = midNode.next;
+        listNode midNode = findMidNodeInList(head);
+        listNode left = head, right = midNode.next;
         midNode.next = null;
         left = sortList(left);
         right = sortList(right);
         return mergeTwoLists(left, right);
     }
 
-    private static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-        ListNode dummy = new ListNode(-1);
-        ListNode temp = dummy;
+    private static listNode mergeTwoLists(listNode list1, listNode list2) {
+        listNode dummy = new listNode(-1);
+        listNode temp = dummy;
         while (list1 != null && list2 != null) {
             if (list1.val <= list2.val) {
                 temp.next = list1;
@@ -524,9 +524,9 @@ public class LinkedListMediamProblems {
         return dummy.next;
     }
 
-    private static ListNode findMidNodeInList(ListNode head) {
-        ListNode slow = head;
-        ListNode fast = head.next;
+    private static listNode findMidNodeInList(listNode head) {
+        listNode slow = head;
+        listNode fast = head.next;
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
@@ -602,11 +602,11 @@ public class LinkedListMediamProblems {
         return zerosHead.next;
     }
 
-    public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+    public static listNode getIntersectionNode(listNode headA, listNode headB) {
         // If both the lists are zero nodes or any one is having null
         if (headA == null || headB == null) return headA;
 
-        ListNode temp1 = headA, temp2 = headB;
+        listNode temp1 = headA, temp2 = headB;
         while (temp1 != temp2) {
             temp1 = temp1.next;
             temp2 = temp2.next;
@@ -671,9 +671,9 @@ public class LinkedListMediamProblems {
         return carry;
     }
 
-    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode t1 = l1, t2 = l2, dummy = new ListNode(-1);
-        ListNode currentNode = dummy;
+    public static listNode addTwoNumbers(listNode l1, listNode l2) {
+        listNode t1 = l1, t2 = l2, dummy = new listNode(-1);
+        listNode currentNode = dummy;
         int carry = 0;
         while (t1 != null || t2 != null || carry == 1) {
             int sum = 0;
@@ -681,7 +681,7 @@ public class LinkedListMediamProblems {
             if (t2 != null) sum += t2.val;
             sum += carry;
             carry = sum / 10;
-            ListNode newNode = new ListNode(sum % 10);
+            listNode newNode = new listNode(sum % 10);
             currentNode.next = newNode;
             currentNode = currentNode.next;
 
