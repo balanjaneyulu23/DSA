@@ -105,10 +105,10 @@ Step1. Lec 2: Build-up Logical thinking: Pattern problems com.dsa.striversa2z.st
             6. count the no of sub array's with given xor k</ br>
             7. Merge Intervals leetoce#56 </br>
             8. Merge two sorted arrays without extra space leetcode#88 </br>
-            9. Find the repeating and missing number geeks for geeks < /br>
+            9. Find the repeating and missing number geeks for geeks <br />
             10. Count Inversions geeks for geeks (refer striver notes for code) </br >
             11. Reverse Pairs leetcode#493 </br>
-            12. Maximum Product Subarray leetcode#152 < /br>
+            12. Maximum Product Subarray leetcode#152 <br />
 **StriversA2ZDSA Problems Binary search 1D 2D, search space** <br />
             1. Binary Search to find X in sorted array leetcode#704 </br>
             2. Floor in a Sorted Array  geeks for geeks</br>
@@ -134,62 +134,62 @@ Step1. Lec 2: Build-up Logical thinking: Pattern problems com.dsa.striversa2z.st
            9. Book Allocation Problem code 360 coding ninja</br>
            10.Split array - Largest Sum leetcode#410</br>
            11. Painter's partition code 360 coding ninja</br>
-           12. Minimize Max Distance to Gas Station leetcode#774< /br>
-           13. Median of 2 sorted arrays leetcode#4< /br>
-           14. Kth element of 2 sorted arrays geeks for geeks< /br>
+           12. Minimize Max Distance to Gas Station leetcode#774<br />
+           13. Median of 2 sorted arrays leetcode#4<br />
+           14. Kth element of 2 sorted arrays geeks for geeks<br />
 **StriversA2ZDSA Problems Binary search  on 2D arrays ** <br />
-          1. Row with max 1s geeks for geeks< /br>
-          2. Search a 2D Matrix leetcode#74< /br>
-          3. Search a 2D Matrix leetcode#240< /br>
-          4. Find Peak Element (2D Matrix) leetcode#1901< /br>
-          5. Matrix Median geeks for geeks< /br>
+          1. Row with max 1s geeks for geeks<br />
+          2. Search a 2D Matrix leetcode#74<br />
+          3. Search a 2D Matrix leetcode#240<br />
+          4. Find Peak Element (2D Matrix) leetcode#1901<br />
+          5. Matrix Median geeks for geeks<br />
 **StriversA2ZDSA Basic String problems ** <br />
-         1. Reverse words in a given string / Palindrome Check leetcode#151< /br>
-         2. Largest odd number in a string  leetcode#1903< /br>
-         3. Longest Common Prefix leetcode#14< /br>
-         4. Isomorphic String leetcode#205< /br>
-         5. Valid Anagram leetcode#242< /br>
-         6. Sort Characters By Frequency leetcode#451< /br>
-         7. Maximum Nesting Depth of the Parentheses leetcode#1614< /br>
-         8. Roman to Integer leetcode#13< /br>
-         9. String to Integer (atoi) leetcode#8< /br>
-         10.Substrings with K Distinct geeks for geeks< /br>
+         1. Reverse words in a given string / Palindrome Check leetcode#151<br />
+         2. Largest odd number in a string  leetcode#1903<br />
+         3. Longest Common Prefix leetcode#14<br />
+         4. Isomorphic String leetcode#205<br />
+         5. Valid Anagram leetcode#242<br />
+         6. Sort Characters By Frequency leetcode#451<br />
+         7. Maximum Nesting Depth of the Parentheses leetcode#1614<br />
+         8. Roman to Integer leetcode#13<br />
+         9. String to Integer (atoi) leetcode#8<br />
+         10.Substrings with K Distinct geeks for geeks<br />
 **StriversA2ZDSA ID Linked List ** <br />
-         1. Introduction to LinkedList, learn about struct, and how is node represented < /br>
-         2. Array to Linked List geeks for geeks< /br>
-         3. Count Linked List Nodes geeks for geeks< /br>
+         1. Introduction to LinkedList, learn about struct, and how is node represented <br />
+         2. Array to Linked List geeks for geeks<br />
+         3. Count Linked List Nodes geeks for geeks<br />
          4. Inserting a node in LinkedList geeks for geeks</br>
-         5. Delete Node in a Linked List Leetcode#237 < /br>
+         5. Delete Node in a Linked List Leetcode#237 <br />
          6. Search in Linked List geeks for geeks</br>
 **StriversA2ZDSA Doubly Linked List ** <br />
-         1. Introduction to DLL, learn about struct, and how is node represented (Introduction to Doubly Linked List) geeks for geeks < /br>
+         1. Introduction to DLL, learn about struct, and how is node represented (Introduction to Doubly Linked List) geeks for geeks <br />
          2. Insert a node in DLL geeks for geeks</br>
          3. Delete a node in DLL geeks for geeks</br>
          4. Reverse a DLL geeks for geeks</br>
 **StriversA2ZDSA Medium problems on Linked List ** <br />
-        1. Middle of a LinkedList [TortoiseHare Method]  leetcode#876 < /br>
-        2. Reverse Linked List leetcode#206 < /br>
-        3. Detect a loop in LL [TortoiseHare Method] leetcode#141 < /br>
-        4. Find the starting point in LL [TortoiseHare Method] leetcode#142 < /br>
+        1. Middle of a LinkedList [TortoiseHare Method]  leetcode#876 <br />
+        2. Reverse Linked List leetcode#206 <br />
+        3. Detect a loop in LL [TortoiseHare Method] leetcode#141 <br />
+        4. Find the starting point in LL [TortoiseHare Method] leetcode#142 <br />
         5. Length of Loop in LL  [TortoiseHare Method] geeks for geeks </ br>
-        6. Check if LL is palindrome or not in LL [TortoiseHare Method] leetcode#234 < /br>
-        7. Segrregate odd and even nodes in LL leetcode#328 < /br>
-        8. Remove Nth Node From End of List [TortoiseHare Method] leetcode#19 < /br>
-        9. Delete the Middle Node of a Linked List [TortoiseHare Method] leetcode#2095 < /br>
-        10. Sort List leetcode#148 < /br>
-        11. Sort a linked list of 0s, 1s and 2s  Geeks for geeks < /br>
-        12. Intersection of Two Linked Lists , leetcode#160 < /br>
-        13. Add 1 to a number represented by LL Geeks for geeks< /br>
-        14. Add 2 numbers in LL leetcode#2 < /br>
+        6. Check if LL is palindrome or not in LL [TortoiseHare Method] leetcode#234 <br />
+        7. Segrregate odd and even nodes in LL leetcode#328 <br />
+        8. Remove Nth Node From End of List [TortoiseHare Method] leetcode#19 <br />
+        9. Delete the Middle Node of a Linked List [TortoiseHare Method] leetcode#2095 <br />
+        10. Sort List leetcode#148 <br />
+        11. Sort a linked list of 0s, 1s and 2s  Geeks for geeks <br />
+        12. Intersection of Two Linked Lists , leetcode#160 <br />
+        13. Add 1 to a number represented by LL Geeks for geeks<br />
+        14. Add 2 numbers in LL leetcode#2 <br />
 **StriversA2ZDSA Medium problems on Doubly Linked List ** <br />
         1. Delete all occurrences of a key in DLL geeks for geeks </ br>
         2. Find pairs with given sum in doubly linked list geeks for geeks </ br>
         3. Remove duplicates from a sorted doubly linked list geeks for geeks </ br>
 **StriversA2ZDSA Hard  problems on  Linked List ** <br />
-       1. Reverse Nodes in k-Group , leetcode#25 < /br>
-       2. Rotate List , leetcode#61 < /br>
-       3. Flattening a Linked List , Geeks for geeks - not written code but written nodes< /br>
-       4. Copy List with Random Pointer , leetcode#138 < /br>
+       1. Reverse Nodes in k-Group , leetcode#25 <br />
+       2. Rotate List , leetcode#61 <br />
+       3. Flattening a Linked List , Geeks for geeks - not written code but written nodes<br />
+       4. Copy List with Random Pointer , leetcode#138 <br />
 
 
 
