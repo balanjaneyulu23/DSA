@@ -188,6 +188,10 @@ Step1. Lec 2: Build-up Logical thinking: Pattern problems com.dsa.striversa2z.st
 **StriversA2ZDSA Hard  problems on  Linked List ** <br />
        1. Reverse Nodes in k-Group , leetcode#25 < /br>
        2. Rotate List , leetcode#61 < /br>
+       3. Flattening a Linked List , Geeks for geeks - not written code but written nodes< /br>
+       4. Copy List with Random Pointer , leetcode#138 < /br>
+
+
 
        
 
