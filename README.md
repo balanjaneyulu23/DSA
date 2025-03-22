@@ -182,9 +182,9 @@ Step1. Lec 2: Build-up Logical thinking: Pattern problems com.dsa.striversa2z.st
         13. Add 1 to a number represented by LL Geeks for geeks<br />
         14. Add 2 numbers in LL leetcode#2 <br />
 **StriversA2ZDSA Medium problems on Doubly Linked List ** <br />
-        1. Delete all occurrences of a key in DLL geeks for geeks </ br>
-        2. Find pairs with given sum in doubly linked list geeks for geeks </ br>
-        3. Remove duplicates from a sorted doubly linked list geeks for geeks </ br>
+        1. Delete all occurrences of a key in DLL geeks for geeks <br />
+        2. Find pairs with given sum in doubly linked list geeks for geeks <br />
+        3. Remove duplicates from a sorted doubly linked list geeks for geeks <br />
 **StriversA2ZDSA Hard  problems on  Linked List ** <br />
        1. Reverse Nodes in k-Group , leetcode#25 <br />
        2. Rotate List , leetcode#61 <br />
